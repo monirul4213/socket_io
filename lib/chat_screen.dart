@@ -34,15 +34,13 @@ final XFile? image = await _imagePicker.pickImage(source: ImageSource.gallery);
   TextEditingController messageController = TextEditingController();
   List<String> messages = [];
 
-
-
   @override
   void initState() {
     super.initState();
     connectToServer();
   }
   void connectToServer() {
-    socket = IO.io("http://192.168.0.108:5000", <String, dynamic>{
+    socket = IO.io("http://192.168.0.108:8000", <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
